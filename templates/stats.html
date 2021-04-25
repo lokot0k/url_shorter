@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3 style="text-align:center;margin-left:20%;">Тут вы можете посмотреть все свои когда-либо сгенерированные
+        ссылки</h3>
+    <div style="text-align:center;">
+        <table>
+            <tr>
+                <th>Оригинальная ссылка</th>
+                <th>Укороченная сслыка</th>
+            </tr>
+            {% for i in links %}
+                <tr>
+                    <td>{{ i[0] }}</td>
+                    <td><a href="{{ i[0] }}">{{ i[1] }}</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

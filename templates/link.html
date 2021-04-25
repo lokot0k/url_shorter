@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="link-div">
+        {% if session['ok'] %}
+            <h2 class="link-h">Ваша ссылка: <span class="link"><a href="https://{{url}}">{{ url }}</a></span></h2>
+        {% else %}
+            <h2 class="link-h">Произошла ошибка, ссылка неверная. Проверьте ссылку
+                и попробуйте еще раз</h2>
+        {% endif %}
+        <a class="btn btn-primary" href="{{ session['last'] }}">Назад</a>
+
+
+    </div>
+{% endblock %}

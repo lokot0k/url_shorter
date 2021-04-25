@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="main-div">
+        <h2 class="main-h">Введите ссылку для сокращения (обязательно с "http" или "https"): </h2>
+        <form action="" method="post">
+            <div>{{ form.csrf_token }}</div>
+            <div class="container">
+                <div class="row cnt-row">
+                    <div class="col-lg-9">
+                        {{ form.url_input(id="url_input") }}
+                    </div>
+                    <div class="col-lg-3">
+                        {{ form.sub_btn(type="submit", class="btn btn-primary main-btn") }}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

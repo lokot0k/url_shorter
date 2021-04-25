@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Register form</h2>
+    {% if  error_msg!="" %}
+        <div class="alert alert-danger"> {{ err_msg }}</div>
+    {% endif %}
+    <form action="" method="post" novalidate>
+        <div>
+            {{ form.csrf_token }}
+        </div>
+        {% for field in form if field.name != "csrf_token" %}
+            <div>
+                {{ field.label() }}
+                {{ field() }}
+                {% for error in field.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </form>
+{% endblock %}
